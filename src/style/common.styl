@@ -1,0 +1,485 @@
+/*
+* Third Party
+*/
+//@import "../../bower_components/normalize.css/normalize.css";
+@import "../../bower_components/reset-css/reset.css";
+// шрифты
+@font-face { font-family: "PT-mono-regular"; src: url('../fonts/pt-mono-regular.eot'); }
+@font-face { font-family: "PT-mono-regular"; src: url('../fonts/pt-mono-regular.ttf'); }
+@font-face { font-family: "Open Sans Bold"; src: url('../fonts/open-sans-bold.eot'); }
+@font-face { font-family: "Open Sans Bold"; src: url('../fonts/open-sans-bold.ttf'); }
+@font-face { font-family: "Open Sans Regular"; src: url('../fonts/open-sans-regular.eot'); }
+@font-face { font-family: "Open Sans Regular"; src: url('../fonts/open-sans-regular.ttf'); }
+@font-face { font-family: "Open Sans Light"; src: url('../fonts/open-sans-light.eot'); }
+@font-face { font-family: "Open Sans Light"; src: url('../fonts/open-sans-light.ttf'); }
+@font-face { font-family: "Open Sans Italic"; src: url('../fonts/open-sans-italic.eot'); }
+@font-face { font-family: "Open Sans Italic"; src: url('../fonts/open-sans-italic.ttf'); }
+// цвета
+
+  $color-header = #043493;  //цвет шапки
+  $color-title = #fff; // цвет заголовка
+  $color-decoration = #ededed
+
+  $width-content = 1300px;
+  $width-text-content = 900px
+
+
+
+body {
+  height 100%
+}
+.body__wrapper {
+
+}
+  img {
+    max-width 100%
+  }
+//----------------------HEADER----------------------------------
+.wrapper-header-content {
+    position relative
+    display flex
+    flex-direction column
+    justify-content space-between
+    height 100%
+    transition 0.5s ease-in-out
+    z-index 555
+}
+.header {
+    background-color $color-header
+    &__wrapper {
+      position relative
+      max-width $width-content
+      margin 0 auto
+      padding 60px 99px
+      min-height 400px
+      max-height 720px
+      height 80vh
+      box-sizing border-box
+      transition 0.5s ease-in-out
+      @media (max-width: 600px) {
+        transition 0.5s ease-in-out
+        padding 20px 20px 20px 20px
+      }
+    }
+
+      &__decoration {
+        max-width 100%
+        max-height 100%
+        position absolute
+        transition 1s ease-in-out
+        opacity 1
+        overflow hidden
+        @media (max-height: 720px) {
+          transition 0.5s ease-in-out
+          max-height 60%
+
+        }
+        @media (max-width: 1200px) {
+          transition 0.5s ease-in-out
+          max-height 60%
+        }
+        @media (max-width: 700px) {
+          transition 0.5s ease-in-out
+          max-height 50%
+          opacity 0.5
+        }
+        @media (max-width: 490px){
+          transition 0.5s ease-in-out
+          display none
+        }
+        &_s1 {
+          top 43vh
+          right 209px
+          z-index 100
+          @media (max-width: 730px) {
+            opacity 0.05
+          }
+        }
+        &_s2 {
+          top 7vh
+          right 289px
+          z-index 50
+        }
+        &_s3 {
+          top 18vh
+          right 350px
+          z-index 50
+          @media (max-height: 500px), (max-width 1200px) {
+            transition 0.5s ease-in-out
+            right 331px
+          }
+        }
+        &_s4 {
+          top 33vh
+          right 117px
+          z-index 100
+        }
+        &_b1 {
+          top 30vh
+          right 309px
+          z-index 100
+        }
+        &_b2 {
+          top 11vh
+          right 183px
+          z-index 50
+        }
+      }
+      &__title-wrapper {
+      max-width 645px
+
+      }
+  &__logo-wrapper {
+    text-align left
+    transition 0.5s ease-in-out
+    @media (max-width: 600px) {
+      transition 0.5s ease-in-out
+      text-align center
+
+    }
+  }
+  &__logo {
+    &_firts {
+      transition 0.5s ease-in-out
+      margin-left -64px
+      @media (max-width: 600px) {
+        transition 0.5s ease-in-out
+        margin-left 0
+      }
+    }
+  }
+
+}
+  //-------------------title block---------------------
+.title-main {
+  color $color-title
+  font-family 'Open Sans Bold', Arial, sans-serif
+  font-size 60px
+  transition 0.5s ease-in-out
+  line-height 1.3
+  @media (max-width: 900px) {
+  transition 0.5s ease-in-out
+  font-size 40px
+}
+  @media (max-width: 690px) {
+    transition 0.5s ease-in-out
+    font-size 35px
+    text-align center
+  }
+  @media (max-width: 400px) {
+    transition 0.5s ease-in-out
+    font-size 20px
+
+  }
+  &__dot {
+    color #4af777
+  }
+  &_small {
+    font-family 'Open Sans Regular', Arial, sans-serif
+    font-size 18px
+    margin-top 22px
+    @media (max-width: 900px) {
+      transition 0.5s ease-in-out
+      font-size 16px
+    }
+  }
+  &_small-footer {
+    max-width 718px
+  }
+  &_size-footer {
+    @media (max-width: 500px) {
+      font-size 20px
+    }
+  }
+  &__smile {
+    @media (max-width: 500px) {
+     display none
+    }
+  }
+
+}
+  //--------------------------------------------
+
+  .content {
+    &__wrapper {
+      max-width $width-text-content
+      margin 0 auto
+    }
+    &__decoration {
+      font-family "PT-mono-regular", serif
+      color $color-decoration
+
+      z-index -1
+      &_number {
+        text-transform uppercase
+        position absolute
+        font-size 60px
+        right 0
+        top 0
+        @media (max-width: 550px) {
+          display none
+        }
+      }
+      &_text {
+        position absolute
+        font-size 48px
+        transform rotate(-90deg)
+        font-weight bold
+        left -207px
+        top 102px
+        @media (max-width: 1000px) {
+          display none
+        }
+      }
+    }
+  }
+   //-----------Основной-Контент-----------------
+
+  .method {
+    margin-left 0
+    position: relative
+    @media (max-width: 950px) {
+      margin-left 10px
+    }
+    @media (max-width: 500px) {
+      margin-left 0
+      margin-right 10px
+    }
+    &_last {
+      margin-bottom 12vh
+      @media (max-width: 730px) {
+        margin-bottom 4vh
+      }
+    }
+    &__wrapper {
+      margin-top 11vh
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+      @media (max-width: 730px) {
+        margin-top 4vh
+      }
+      &_edit {
+        margin-top 72px
+        @media (max-width: 730px) {
+          margin-top 30px
+        }
+      }
+      &_edit-last {
+        margin-top 16px
+      }
+    }
+    &__wrapper-input {
+      flex 0 1 32%
+      @media (max-width: 730px) {
+        flex 0 1 99%
+        text-align center
+      }
+    }
+    &__title {
+      flex 0 1 100%
+      font-family "Open Sans Regular", serif
+      font-size 30px
+      @media (max-width: 730px) {
+      text-align center
+    }
+      @media (max-width: 400px) {
+        font-size 20px
+      }
+      &_bold {
+      font-family "Open Sans Bold", serif
+      }
+    }
+    &__text {
+      margin-top 30px
+      margin-bottom 23px
+      flex 0 1 100%
+      font-family "Open Sans Regular", serif
+      font-size 16px
+      @media (max-width: 730px) {
+        text-align center
+      }
+      &_edit {
+        margin-top 22px
+        margin-bottom 8px
+      }
+    }
+    &__input-text {
+      font-size 14px
+      font-family "PT-mono-regular", serif
+      color #2a489b
+      &_revers {
+        color #c4c4c4
+      }
+    }
+    &__input {
+      border: 1px solid transparent;
+      font-family "Open Sans Regular",serif
+      font-size 16px
+      color #c4c4c4
+      padding-bottom 17px
+      width 99%
+      @media (max-width: 730px) {
+        text-align center
+      }
+      &:focus {
+        outline: none
+        border-bottom 1px solid #043493
+      }
+      &_revers {
+        color #2a489b
+      }
+    }
+    &__button {
+        font-family "Open Sans Regular", serif
+        font-size 16px
+        color #043493
+        border none
+        background-color transparent
+        cursor: pointer
+        position relative
+        margin-top 29px
+        margin-left 44px
+        @media (max-width: 730px){
+        margin-left -30px
+        left 50%
+        }
+      &:active {
+        background-color #4a5093
+        color #ffffff
+        border-radius: 20px;
+      }
+
+      &:before {
+        content ""
+        background: url(../img/content/buttun-Icon.png) no-repeat;
+        width 35px
+        height 25px
+        display: block;
+        position absolute
+        left -35px
+        top -1px
+      }
+      &:focus {
+        outline: none
+      }
+    }
+  }
+
+    .code {
+      font-family "PT-mono-regular", serif
+      font-size 14px
+      line-height 21px
+      padding 8px 0 30px 48px
+      counter-reset li
+      background-color #ededed
+      margin-top 37px
+      margin-left 5px
+      word-break break-all
+      box-sizing: border-box;
+      &__item {
+        position relative
+        &:before {
+          content counter(li)
+          counter-increment li
+          position absolute
+          top 1px;
+          left -3em
+          width 2em
+          padding -4px 0
+          color #c4c4c4
+          font-family "PT-mono-regular", sans-serif
+          font-size 14px
+          text-align center
+        }
+        &_path {
+          background-color #4af777
+        }
+        &_first-elem {
+          margin-top 20px
+        }
+      }
+    }
+  //----footer---------
+  .footer {
+    background-color $color-header
+    &__wrapper {
+      display flex
+      flex-direction column
+      justify-content space-between
+      box-sizing border-box
+      max-width $width-text-content
+      margin 0 auto
+      padding 101px 6px 88px 6px
+      min-height 490px
+      max-height 720px
+      height 76vh
+      @media (max-height: 720px) {
+        padding 40px 6px 20px 6px
+      }
+      @media (max-height: 500px) {
+        height 50vh
+      }
+      @media (max-width: 900px) {
+      padding 50px 10px 20px 10px
+      height 70vh
+      }
+    }
+    &__position-wrapper {
+      display flex
+      flex-direction column
+      justify-content space-between
+      height 100%
+      @media (max-width: 500px) {
+        height 80%
+      }
+    }
+    &__bottom-wrapper{
+        padding-bottom 20px
+        align-items center
+        display flex
+        justify-content space-between
+        max-height 120px
+      @media (max-width: 900px) {
+        flex-direction column
+        align-items center
+        min-height 100px
+      }
+
+    }
+  }
+    .social-info {
+      margin-top 5vh
+      margin-bottom 15vh
+      display flex
+      max-width 370px
+      font-family "Open Sans Regular",sans-serif
+      font-size 18px
+      color #ffffff
+      justify-content space-between
+      flex-wrap wrap
+      @media (max-height: 720px) {
+        margin-bottom 5vh
+      }
+      @media (max-width: 900px) {
+      margin-bottom 5vh
+    }
+      &__title {
+          align-self center
+      }
+
+    }
+      .footer-title {
+          font-family 'PT-mono-regular', serif
+          font-size 18px
+          color #ffffff
+        &:first-child {
+            flex 0 1 46%
+            @media (max-width: 900px) {
+            flex 0 1 auto
+          }
+        }
+          &_company {
+            color #4af777
+        }
+      }

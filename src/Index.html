@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/common.css">
+    <title>Тестовая верстка_compile</title>
+</head>
+<body class="body">
+
+//= template/header.html
+
+<section class="content">
+    <div class="content__wrapper">
+        <div class="method">
+            <p class="content__decoration content__decoration_number">01</p>
+            <p class="content__decoration content__decoration_text">Настройка</p>
+            <div class="method__wrapper">
+                <h1 class="method__title"><span class="method__title_bold">Способ 1.</span> Без .htaccess</h1>
+                <p class="method__text">Укажите путь к вашим файлам</p>
+                <div class="method__wrapper-input">
+                    <p class="method__input-text">style.less</p>
+                    <input v-model="less.path" type="text" class="method__input"  />
+                </div>
+
+                <div class="method__wrapper-input">
+                    <p class="method__input-text">style.scss</p>
+                    <input  v-model="scss.path" type="text"  class="method__input" />
+                </div>
+
+                <div class="method__wrapper-input">
+                    <p class="method__input-text">style.coffee</p>
+                    <input  v-model="coffee.path" type="text"  class="method__input" />
+                </div>
+
+            </div>
+
+
+        <ul class="code" id="targetCode-1">
+            <li class="code__item"># Less</li>
+            <li class="code__item">&lt;link rel="stylesheet" type="text/css"<br>{{less.beforePath}}<span class="code__item_path">{{less.path}}</span>{{less.afterPath}}</li>
+            <li class="code__item code__item_first-elem"># scss</li>
+            <li class="code__item">&lt;link rel="stylesheet" type="text/css"<br>{{scss.beforePath}} <span class="code__item_path">{{scss.path}}</span>{{scss.afterPath}} </li>
+            <li class="code__item code__item_first-elem"># coffee</li>
+            <li class="code__item">&lt;script type="text/javascript"<br>{{coffee.beforePath}}<span class="code__item_path">{{coffee.path}}</span>{{coffee.afterPath}}&lt;/script&gt;</li>
+        </ul>
+            <button id="targetButton-1" class="method__button" data-clipboard-target="#targetCode-1">Копировать код</button>
+
+    </div>
+        <!------------------------------------------Способ 2---------------------------------->
+
+        <div class="method">
+            <p class="content__decoration content__decoration_number">02</p>
+            <div class="method__wrapper method__wrapper_edit">
+                <h1 class="method__title"><span class="method__title_bold">Способ 2.</span> с .htaccess</h1>
+                <p class="method__text method__text_edit">В .htaccess после: RewriteEngine On</p>
+            </div>
+
+
+            <ul class="code" id="targetCode-2">
+                <li class="code__item"># Less</li>
+                <li class="code__item">RewriteRule ^(.*).less.css$<br>https://compilim.ru/v2/c/less/?from_file=%{HTTP_HOST}/$1.less&ssl=%{HTTPS} [L]</li>
+                <li class="code__item">RewriteRule ^(.*).less.min.css$<br>https://compilim.ru/v2/c/less/?from_file=%{HTTP_HOST}/$1.less&ssl=%{HTTPS}&min=on [L]</li>
+                <li class="code__item code__item_first-elem"># Scss</li>
+                <li class="code__item">RewriteRule ^(.*).scss.js$<br>https://compilim.ru/v2/c/scss/?from_file=%{HTTP_HOST}/$1.scss&ssl=%{HTTPS} [L]</li>
+                <li class="code__item">RewriteRule ^(.*).scss.min.js$<br>https://compilim.ru/v2/c/scss/?from_file=%{HTTP_HOST}/$1.scss&ssl=%{HTTPS}&min=on [L]</li>
+                <li class="code__item code__item_first-elem"># Coffee</li>
+                <li class="code__item">RewriteRule ^(.*).coffee.js$<br>https://compilim.ru/v2/c/coffee/?from_file=%{HTTP_HOST}/$1.coffee&ssl=%{HTTPS} [L]</li>
+                <li class="code__item">RewriteRule ^(.*).coffee.min.js$<br>https://compilim.ru/v2/c/coffee/?from_file=%{HTTP_HOST}/$1.coffee&ssl=%{HTTPS}&min=on [L]</li>
+            </ul>
+            <button id="targetButton-2" class="method__button" data-clipboard-target="#targetCode-2">Копировать код</button>
+        </div>
+
+
+        <div class="method method_last">
+            <div class="method__wrapper method__wrapper_edit-last">
+                <p class="method__text method__text_edit">В шаблон добавьте ссылку на ваш файл</p>
+            </div>
+
+            <ul class="code" id="targetCode-3">
+                <li class="code__item"># Less</li>
+                <li class="code__item">&lt;link rel="stylesheet" type="text/css" href="/css/style.less.css" /&gt;</li>
+                <li class="code__item">&lt;link rel="stylesheet" type="text/css" href="/css/style.less.min.css" /&gt;</li>
+                <li class="code__item code__item_first-elem"># Scss</li>
+                <li class="code__item">&lt;link rel="stylesheet" type="text/css" href="/css/style.scss.css" /&gt;</li>
+                <li class="code__item">&lt;link rel="stylesheet" type="text/css" href="/css/style.scss.min.css" /&gt;</li>
+                <li class="code__item code__item_first-elem"># Coffee</li>
+                <li class="code__item">&lt;script type="text/javascript" src="/js/script.coffee.js"&gt;&lt;/script&gt;</li>
+                <li class="code__item">&lt;script type="text/javascript" src="/js/script.coffee.min.js"&gt;&lt;/script&gt;</li>
+            </ul>
+            <button id="targetButton-3" class="method__button" data-clipboard-target="#targetCode-3">Копировать код</button>
+        </div>
+
+    </div>
+</section>
+<!--</section>-->
+//= template/footer.html
+<script src="js/common.js"></script>
+</body>
+</html>

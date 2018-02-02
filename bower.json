@@ -1,0 +1,23 @@
+{
+  "name": "country",
+  "description": "test",
+  "main": "index.js",
+  "authors": [
+    "Vorobyovds_it"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "reset-css": "*",
+    "jquery": "2.*",
+    "vue":"*"
+  }
+}
