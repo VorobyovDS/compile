@@ -45,12 +45,12 @@ function parallaxScroll(){
         speed: 0.008,
         elements: {
             name:{
-            s1:document.getElementsByClassName('header__decoration_s1'),
-            s2:document.getElementsByClassName('header__decoration_s2'),
-            s3:document.getElementsByClassName('header__decoration_s3'),
-            s4:document.getElementsByClassName('header__decoration_s4'),
-            b1:document.getElementsByClassName('header__decoration_b1'),
-            b2:document.getElementsByClassName('header__decoration_b2')
+            s1:document.getElementsByClassName('header__decoration_s1')[0],
+            s2:document.getElementsByClassName('header__decoration_s2')[0],
+            s3:document.getElementsByClassName('header__decoration_s3')[0],
+            s4:document.getElementsByClassName('header__decoration_s4')[0],
+            b1:document.getElementsByClassName('header__decoration_b1')[0],
+            b2:document.getElementsByClassName('header__decoration_b2')[0]
             },
             main_settings_top:{
                 s1:43,
@@ -69,14 +69,15 @@ function parallaxScroll(){
             return hight
         }
     };
-    // ниже идет сверх ужасная вещь, не могу что-то сообразить как сделать лучше, нужно как то перебирать красиво значения
-    var i;
-    for(i=0; i<SettingsScrolled.elements.name.s1.length; i++)SettingsScrolled.elements.name.s1[i].style.top=SettingsScrolled.elements.main_settings_top.s1+SettingsScrolled.hightScroll()+'vh';
-    for(i=0; i<SettingsScrolled.elements.name.s2.length; i++)SettingsScrolled.elements.name.s2[i].style.top=SettingsScrolled.elements.main_settings_top.s2+SettingsScrolled.hightScroll()+'vh';
-    for(i=0; i<SettingsScrolled.elements.name.s3.length; i++)SettingsScrolled.elements.name.s3[i].style.top=SettingsScrolled.elements.main_settings_top.s3+SettingsScrolled.hightScroll()+'vh';
-    for(i=0; i<SettingsScrolled.elements.name.s4.length; i++)SettingsScrolled.elements.name.s4[i].style.top=SettingsScrolled.elements.main_settings_top.s4+SettingsScrolled.hightScroll()+'vh';
-    for(i=0; i<SettingsScrolled.elements.name.b1.length; i++)SettingsScrolled.elements.name.b1[i].style.top=SettingsScrolled.elements.main_settings_top.b1+SettingsScrolled.hightScroll()+'vh';
-    for(i=0; i<SettingsScrolled.elements.name.b2.length; i++)SettingsScrolled.elements.name.b2[i].style.top=SettingsScrolled.elements.main_settings_top.b2+SettingsScrolled.hightScroll()+'vh';
+    // чуть лучше чем было)
+
+    SettingsScrolled.elements.name.s1.style.top=SettingsScrolled.elements.main_settings_top.s1+SettingsScrolled.hightScroll()+'vh';
+    SettingsScrolled.elements.name.s2.style.top=SettingsScrolled.elements.main_settings_top.s2+SettingsScrolled.hightScroll()+'vh';
+    SettingsScrolled.elements.name.s3.style.top=SettingsScrolled.elements.main_settings_top.s3+SettingsScrolled.hightScroll()+'vh';
+    SettingsScrolled.elements.name.s4.style.top=SettingsScrolled.elements.main_settings_top.s4+SettingsScrolled.hightScroll()+'vh';
+    SettingsScrolled.elements.name.b1.style.top=SettingsScrolled.elements.main_settings_top.b1+SettingsScrolled.hightScroll()+'vh';
+    SettingsScrolled.elements.name.b2.style.top=SettingsScrolled.elements.main_settings_top.b2+SettingsScrolled.hightScroll()+'vh';
+
 
 };
 //-------------------копирование-в-буфер---Clipboard.js---------------------------
