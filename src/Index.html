@@ -20,17 +20,17 @@
                 <p class="method__text">Укажите путь к вашим файлам</p>
                 <div class="method__wrapper-input">
                     <p class="method__input-text">style.less</p>
-                    <input v-model="less.path" type="text" class="method__input"  />
+                    <input v-model="less.path" type="text" class="method__input" onclick="return reversInput(this)" />
                 </div>
 
                 <div class="method__wrapper-input">
                     <p class="method__input-text">style.scss</p>
-                    <input  v-model="scss.path" type="text"  class="method__input" />
+                    <input  v-model="scss.path" type="text"  class="method__input" onclick="return reversInput(this)" />
                 </div>
 
                 <div class="method__wrapper-input">
                     <p class="method__input-text">style.coffee</p>
-                    <input  v-model="coffee.path" type="text"  class="method__input" />
+                    <input  v-model="coffee.path" type="text"  class="method__input" onclick="return reversInput(this)" />
                 </div>
 
             </div>
@@ -44,7 +44,7 @@
             <li class="code__item code__item_first-elem"># coffee</li>
             <li class="code__item">&lt;script type="text/javascript"<br>{{coffee.beforePath}}<span class="code__item_path">{{coffee.path}}</span>{{coffee.afterPath}}&lt;/script&gt;</li>
         </ul>
-            <button id="targetButton-1" class="method__button" data-clipboard-target="#targetCode-1">Копировать код</button>
+            <button id="targetButton-1" class="method__button" data-clipboard-target="#targetCode-1" onclick="return CopyButton(this)">Копировать код</button>
 
     </div>
         <!------------------------------------------Способ 2---------------------------------->
@@ -68,7 +68,7 @@
                 <li class="code__item">RewriteRule ^(.*).coffee.js$<br>https://compilim.ru/v2/c/coffee/?from_file=%{HTTP_HOST}/$1.coffee&ssl=%{HTTPS} [L]</li>
                 <li class="code__item">RewriteRule ^(.*).coffee.min.js$<br>https://compilim.ru/v2/c/coffee/?from_file=%{HTTP_HOST}/$1.coffee&ssl=%{HTTPS}&min=on [L]</li>
             </ul>
-            <button id="targetButton-2" class="method__button" data-clipboard-target="#targetCode-2">Копировать код</button>
+            <button id="targetButton-2" class="method__button" data-clipboard-target="#targetCode-2" onclick="return CopyButton(this)">Копировать код</button>
         </div>
 
 
@@ -88,7 +88,7 @@
                 <li class="code__item">&lt;script type="text/javascript" src="/js/script.coffee.js"&gt;&lt;/script&gt;</li>
                 <li class="code__item">&lt;script type="text/javascript" src="/js/script.coffee.min.js"&gt;&lt;/script&gt;</li>
             </ul>
-            <button id="targetButton-3" class="method__button" data-clipboard-target="#targetCode-3">Копировать код</button>
+            <button id="targetButton-3" class="method__button" data-clipboard-target="#targetCode-3" onclick="return CopyButton(this)">Копировать код</button>
         </div>
 
     </div>
